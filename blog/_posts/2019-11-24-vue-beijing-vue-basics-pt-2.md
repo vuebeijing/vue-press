@@ -60,7 +60,7 @@ Help us make Beijing a safer place to eat!
 ### Vue SFU
 
 
-```md
+```HTML
   <template>
     <!-- Where things are -->
   </template>
@@ -80,7 +80,7 @@ Help us make Beijing a safer place to eat!
 
 Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
 
-```md
+```HTML
   <div v-for="item in items" :key="item.id">
         {{ item }}
   </div>
@@ -89,7 +89,7 @@ Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
 #### V-model and declarative rendering
 
 Bind changes in an input to a value and render (show) it in the DOM
-```md
+```HTML
   <template>
     <div>
       <input v-model="inputText" type="text" />
@@ -107,6 +107,21 @@ Bind changes in an input to a value and render (show) it in the DOM
     }
   </script>
 ```
+#### V-if-else
+
+V-if-else is a simple if this then that, else do this command. 
+A simple example would be to render a list of restaurants and then
+show poop emoji if a restaurant suffers from laduzi. Take a look:
+
+```HTML
+<span v-for="restaurant in restaurants" :key="count">
+            <i v-if="restaurant.laduzi">💩</i>
+            <i v-else>❤️</i>
+</span>
+```
+
+So to iterate, it restauran.laduzi is true, as in if it is defined, the poop emoji will show up.
+Otherwise we show the heart
 
 ### Lifecycle hooks
 
@@ -163,47 +178,6 @@ https://vuejs.org/v2/guide/events.html
 ```
 
 
-
-
-#### Everything Together
-
-```HTML
-  <template>
-    <div>
-     <div @click="doSomething" class="myClass"></div>
-     <div>
-          <input v-model="inputText" type="text" />
-          <div>{{inputText}}</div>
-     </div>
-    </div>
-  </template>
-
-  <script>
-    export default {
-      data() {
-        return {
-          inputText:''
-        }
-      },
-      mounted () {
-        console.log('Mounted!');
-      },
-      methods: {
-        doSomething() {
-          console.log('I am doing something')
-        }
-      },
-    }
-  </script>
-
-  <style lang="scss" scoped>  
-    myClass:{
-      color:red
-    }
-  </style>
-```
-
-
 ## Today's Workshop
 
 We will be covering
@@ -215,7 +189,6 @@ We will be covering
 - Properties
 - V-directives
     - V-show
-    - V-if-else
 - Routing
 
 You will get last time's sample code to work with including samples
@@ -271,18 +244,9 @@ in which case the main becomes the child of that and so forth.
 Doing multiple levels of parent-child nesting can also get complicated, so
 try to keep your component design as flat as possible.
 
-
-### New Vue-Directives
-
-Let's code up that restaurant card component and use two new directives in doing so:
-- V-show
-- V-if-else
-
-
 #### Properties
 
-Okay we have split the code apart, but how to pass the data from main into
-the restaurant components? In comes properties.
+Before we can start splitting our code, we need to talk a little about something called properties.
 Properties are variables that you can pass into a component. So for instance
 we can pass a property of 'restaurantData' into our restaurant card and 
 we can now use it inside the component
@@ -332,45 +296,140 @@ notice that we the prop name and the inserted variable name does not
 need to be the same!
 
 
-#### Routing
+#### Splitting restaurant card
 
-new code
-https://codesandbox.io/s/vue-template-cj73u
-
-routing example 
-https://codesandbox.io/s/qx3orn736q
-
-https://vuejs.org/v2/guide/routing.html
-
-```js
-const NotFound = { template: '<p>Page not found</p>' }
-const Home = { template: '<p>home page</p>' }
-const About = { template: '<p>about page</p>' }
-
-const routes = {
-  '/': Home,
-  '/about': About
-}
-
-new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
-})
-```
-
-For this example we have already created an additional component
-called restaurant details. The idea is that if you click on a restaurant
-card you will be routed to another page that show all the details
-of the restaurant. You can copy the code here
+Last times code can be found here: https://codesandbox.io/s/vue-template-hut3w
+As we can see in our old code we were using the directive v-for to loop over restaurants.
+Our task now is to take out the two span elements inside the outer v-for and 
+extract them into a separate component using what we learned previously. 
 
 ```HTML
- Insert Component Code!
+  <ul class="list-group list-group-flush margin-bottom-10">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+       v-for="(restaurant, index) in restaurants" 
+       :key="index">
+        <span>{{restaurant.name}}</span>
+        <span>
+          <span v-for="count in restaurant.count" :key="count">
+            <i v-if="restaurant.laduzi">💩</i>
+            <i v-else>❤️</i>
+          </span>
+        </span>
+      </li>
+  </ul>
+```
+
+
+
+#### New Vue-Directives
+
+Let's code up that restaurant card component and use two new directives in doing so:
+- V-show
+NOTE: If this works well with the created components, let's go through it, otherwise not.
+
+
+
+
+#### Routing
+
+last thing we will cover today is routing. Routing means the action of
+redirecting the user to a new page. We have made a ready component, that shows 
+details about a restaurant in a new page. This can then be shared as is as the restaurant
+page.
+
+```HTML
+INSERT SAMPLE COMPONENT. 
+Basic requirements
+ - Show details about the restaurant
+ - Show laduzi vs no-laduzi counts
+ - Show how many people have eaten there
+ - Add a button to route back to main
+```
+
+Really basic sample code in codesandbox
+https://codesandbox.io/s/vue-template-cj73u
+
+
+In order to do routing we need a npm module called vuerouter. Vuerouter allows
+us to defined routes (pages) where our users can navigate to
+
+lets create a index.js file to host our application initialization
+
+``` js
+import Vue from "vue";
+import router from "./router";
+import App from "./App.vue"; // we will come back to this later
+import "bootstrap/dist/css/bootstrap.min.css"; // for styling
+Vue.config.productionTip = true;
+Vue.config.devtools = true;
+
+/* eslint-disable no-new */
+// we define the main entry point of the Vue instance.
+// we will discuss this later
+new Vue({
+  el: "#app",
+  router,
+  template: "<App/>",
+  components: { App }
+});
+```
+
+next we will define the router. Here we have two components Hello and Home.
+
+```js
+import Vue from "vue";
+// vue-router npm package that extends vue
+import Router from "vue-router";
+// normal vue components
+import Home from "../components/Home.vue";
+import Hello from "../components/Hello.vue";
+Vue.use(Router);
+
+export default new Router({
+  mode: "history",
+
+  routes: [
+    {
+      path: "/", // path in the url https://something.com/
+      redirect: "/home" // redirect to another path, in this case /home
+    },
+
+    {
+      path: "/home", // path in the url https://something.com/home
+      component: Home // the component to show when we are visiting this route
+    },
+
+    {
+      path: "/hello", // path in the url https://something.com/hello
+      component: Hello
+    }
+  ]
+});
+```
+
+Lastly we will need to bring these pieces together. There needs to be one parent component
+that handles routing and showing the routes on the page. Let's call that App.vue. This is
+the same App component we imported earlier.
+
+Here you can see how we are using a vuerouter exposed custom element called router-link
+to define which component to render when we click on it.
+The result of the click will be rendered inside the router-view component.
+
+```HTML
+<template>
+  <div id="app">
+    <router-link class="link" :to="{ path: '/hello'}">Say hello</router-link>
+    <br>
+    <router-link class="link" :to="{ path: '/'}">Main</router-link>
+    <br>
+		<router-view></router-view>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: "app"
+};
+</script>
 ```

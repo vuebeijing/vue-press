@@ -1,0 +1,38 @@
+
+#### Everything Together
+
+```HTML
+  <template>
+    <div>
+     <div @click="doSomething" class="myClass"></div>
+     <div>
+          <input v-model="inputText" type="text" />
+          <div>{{inputText}}</div>
+     </div>
+    </div>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          inputText:''
+        }
+      },
+      mounted () {
+        console.log('Mounted!');
+      },
+      methods: {
+        doSomething() {
+          console.log('I am doing something')
+        }
+      },
+    }
+  </script>
+
+  <style lang="scss" scoped>  
+    myClass:{
+      color:red
+    }
+  </style>
+```
