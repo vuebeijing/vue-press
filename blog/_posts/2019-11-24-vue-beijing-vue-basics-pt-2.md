@@ -212,7 +212,7 @@ You can take out the monitor and change it to a new one. The monitor does monito
 
 Splitting things into smaller components makes the whole easier to manage!
 
-#### Splitting our project
+### Splitting our project
 
 Looking at our project what could be parts that one could take apart 
 to handle one specific task?
@@ -244,7 +244,7 @@ in which case the main becomes the child of that and so forth.
 Doing multiple levels of parent-child nesting can also get complicated, so
 try to keep your component design as flat as possible.
 
-#### Properties
+### Properties
 
 Before we can start splitting our code, we need to talk a little about something called properties.
 Properties are variables that you can pass into a component. So for instance
@@ -296,7 +296,7 @@ notice that we the prop name and the inserted variable name does not
 need to be the same!
 
 
-#### Splitting restaurant card
+### Splitting restaurant card
 
 Last times code can be found here: https://codesandbox.io/s/vue-template-hut3w
 As we can see in our old code we were using the directive v-for to loop over restaurants.
@@ -321,7 +321,7 @@ extract them into a separate component using what we learned previously.
 
 
 
-#### New Vue-Directives
+### New Vue-Directives
 
 Let's code up that restaurant card component and use two new directives in doing so:
 - V-show
@@ -330,7 +330,7 @@ NOTE: If this works with the created components, let's go through it, otherwise 
 
 
 
-#### Routing
+### Routing
 
 last thing we will cover today is routing. Routing means the action of
 redirecting the user to a new page. We have made a ready component, that shows 
