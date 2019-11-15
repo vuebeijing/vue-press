@@ -325,7 +325,7 @@ extract them into a separate component using what we learned previously.
 
 Let's code up that restaurant card component and use two new directives in doing so:
 - V-show
-NOTE: If this works well with the created components, let's go through it, otherwise not.
+NOTE: If this works with the created components, let's go through it, otherwise not.
 
 
 
