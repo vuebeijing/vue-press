@@ -118,7 +118,6 @@ about lifecycle hooks here
 
 https://vuejs.org/v2/guide/instance.html
 
-<router-link />#Instance-Lifecycle-Hooks
 
 ```HTML
  <script>
@@ -153,8 +152,6 @@ from user actions
 We used @click to react to a click event. There are others out there as well.
 Take a look
 https://vuejs.org/v2/guide/events.html
-
-<router-link />
 
 
 ```HTML
@@ -344,8 +341,6 @@ routing example
 https://codesandbox.io/s/qx3orn736q
 
 https://vuejs.org/v2/guide/routing.html
-
-<router-link />
 
 ```js
 const NotFound = { template: '<p>Page not found</p>' }
