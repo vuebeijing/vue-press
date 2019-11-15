@@ -1,0 +1,23 @@
+{
+  "name": "vue-part-2",
+  "version": "0.0.1",
+  "description": "vue workshop part 2",
+  "main": "index.js",
+  "authors": {
+    "name": "Tuomo",
+    "email": "tuomo.aa.nieminen@gmail.com"
+  },
+  "repository": "/vue-part-2",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/theme-blog": "^1.0.0",
+    "vuepress": "^1.0.0"
+  },
+  "dependencies": {
+    "vuepress-plugin-table-of-contents": "^1.1.2"
+  }
+}
