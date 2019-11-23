@@ -7,6 +7,7 @@ tag:
   - pt 2
 author: Tuomo
 location: Beijing 
+layout: Layout
 ---
 
 # Vue Basics - Part II

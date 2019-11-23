@@ -1,18 +1,18 @@
 module.exports = {
   title: 'Vue Beijing Workshops',
   description: 'This is a blog example built by VuePress',
-  theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
-  plugins: ['@dovyp/vuepress-plugin-clipboard-copy', true],
+  theme: 'Layout',//'@vuepress/theme-blog', // OR shortcut: @vuepress/blog
+  // plugins: ['@dovyp/vuepress-plugin-clipboard-copy', true],
   themeConfig: {
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
-     */
-    modifyBlogPluginOptions(blogPluginOptions) {
-      return blogPluginOptions
-    },
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#nav
-     */
+  //   /**
+  //    * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
+  //    */
+  //   modifyBlogPluginOptions(blogPluginOptions) {
+  //     return blogPluginOptions
+  //   },
+  //   /**
+  //    * Ref: https://vuepress-theme-blog.ulivz.com/#nav
+  //    */
     nav: [
       {
         text: 'Posts',
@@ -23,9 +23,9 @@ module.exports = {
         link: '/tag/',
       },
     ],
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#footer
-     */
+  //   /**
+  //    * Ref: https://vuepress-theme-blog.ulivz.com/#footer
+  //    */
     footer: {
       contact: [
         {
