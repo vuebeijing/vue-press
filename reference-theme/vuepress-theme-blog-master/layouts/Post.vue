@@ -22,7 +22,7 @@
 </script>
 
 <style lang="stylus">
-@require '../styles/wrapper.styl';
+@require '../../styles/wrapper.styl';
 
   .vuepress-blog-theme-content
     @extend $wrapper
