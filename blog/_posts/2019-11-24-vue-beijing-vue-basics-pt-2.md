@@ -44,7 +44,7 @@ Help us make Beijing a safer place to eat!
 - Vue
   Vue is a front-end framework. It makes development easier
 
-- SFU (Single File Component)
+- SFC (Single File Component)
   Have HTML, CSS, JS in the same file
 
 - DOM (Document Object Model)
@@ -57,7 +57,7 @@ Help us make Beijing a safer place to eat!
 - V-directive
   Tools to render (show) things in the DOM
 
-### Vue SFU
+### Vue SFC
 
 
 ```HTML
