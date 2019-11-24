@@ -81,9 +81,18 @@ Help us make Beijing a safer place to eat!
 Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
 
 ```HTML
-  <div v-for="item in items" :key="item.id">
+  <div v-for="item in items" :key="index">
         {{ item }}
   </div>
+```
+
+Example for a list
+```HTML
+  <ul>
+      <li v-for="item in items" :key="index">
+        {{ item }}
+      </li>
+  </ul>
 ```
 
 #### V-model and declarative rendering
@@ -433,3 +442,9 @@ export default {
 };
 </script>
 ```
+
+### Completed code
+
+You can check out the completed code here!
+
+https://codesandbox.io/s/laduzi-app-e6dvm
