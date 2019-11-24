@@ -78,7 +78,7 @@ This is a file that enables you to write the HTML, CSS and Javscript for your co
 
 ### Directives
 
-#### `v-for`
+### `v-for`
 
 Render (show) a list from an array i.e. `['banana', 'orange', 'laduzi']`
 
@@ -97,7 +97,7 @@ Example for a list
   </ul>
 ```
 
-#### `v-model` and declarative rendering
+### `v-model` and declarative rendering
 
 Bind changes in an input to a value and render (show) it in the DOM
 ```HTML
@@ -118,7 +118,7 @@ Bind changes in an input to a value and render (show) it in the DOM
     }
   </script>
 ```
-#### `v-if-else`
+### `v-if-else`
 
 `v-if-else` is a simple if this then that, else do this command. 
 For instance we can render a list to see if or if not a cat is our belowed
@@ -232,7 +232,7 @@ You can take out the monitor and change it to a new one. The monitor does monito
 Splitting things into smaller components makes the whole easier to manage!
 
 <br />
-#### Splitting our project
+### Splitting our project
 
 Looking at our project what could be parts that one could take apart 
 to handle one specific task?
