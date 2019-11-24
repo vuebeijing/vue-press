@@ -9,7 +9,7 @@ author: Tuomo
 location: Beijing 
 ---
 
-<h1 align="center" >Vue Basics - Part II</h1>
+# Vue Basics - Part II
 
 ## Our app, Laduzi
 
@@ -323,7 +323,7 @@ need to be the same!
 
 ### Components - Splitting restaurant card
 
-Last times code can be found here: https://codesandbox.io/s/vue-template-hy5ln
+Last times code can be found here: 👉🏽 **https://codesandbox.io/s/vue-template-hy5ln**
 As we can see in our old code we were using the directive v-for to loop over restaurants.
 Our task now is to take out the two span elements inside the outer v-for and 
 extract them into a separate component using what we learned previously. 
