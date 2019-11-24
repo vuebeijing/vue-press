@@ -30,32 +30,46 @@ Help us make Beijing a safer place to eat!
 
 ### Terminology
 
-- HTML (HyperText Markup Language)
+- HTML (HyperText Markup Language) <br/>
   Where things are
 
-- JS (Javascript), sometimes called Ecmascript (ESM)
+- JS (Javascript), sometimes called Ecmascript (ESM) <br/>
   What things do
 
-- CSS (Cascading Style Sheets) - You might also see SASS or SCSS that are just extensions of CSS
+- CSS (Cascading Style Sheets) - You might also see SASS or SCSS that are just extensions of CSS <br/>
+  What things look like
 
-- Front-End
-  What you see on a website
+- Front-End <br/>
+  Everything you see on a website
 
-- Vue
+- Vue <br/>
   Vue is a front-end framework. It makes development easier
 
-- SFC (Single File Component)
+- SFC (Single File Component) <br/>
   Have HTML, CSS, JS in the same file
 
-- DOM (Document Object Model)
+- DOM (Document Object Model) <br/>
   Contains all elements in the page icluding HTML, JS, CSS and other cool stuff.
   Normally used like: "The button didn't render in the DOM"
   
-- Render
+- Render <br/>
   Show something in the DOM
 
-- V-directive
+- V-directive <br/>
   Tools to render (show) things in the DOM
+
+- Tag <br/>
+  HTML elements we can use on the DOM, like div or input. A good list of the basic components <br/>
+  can be found here: https://www.learn-html.org/en/Basic_Elements
+  
+- Object <br/>
+  Think about a cat. The cats name is Mr.Watson and it is red. When we formulate this as an object we get
+  ```js
+   const myCat = {
+     name:'Mr.Watson',
+     color:'red'
+   }
+  ```
 
 ### Vue SFC
 
@@ -81,7 +95,7 @@ Help us make Beijing a safer place to eat!
 Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
 
 ```HTML
-  <div v-for="item in items" :key="index">
+  <div v-for="item in items" v-bind:key="index">
         {{ item }}
   </div>
 ```
@@ -119,18 +133,30 @@ Bind changes in an input to a value and render (show) it in the DOM
 #### V-if-else
 
 V-if-else is a simple if this then that, else do this command. 
-A simple example would be to render a list of restaurants and then
-show poop emoji if a restaurant suffers from laduzi. Take a look:
+For instance we can render a list to see if or if not a cat is our belowed
+Mr.Watson
 
 ```HTML
-<span v-for="restaurant in restaurants" :key="count">
-            <i v-if="restaurant.laduzi">💩</i>
-            <i v-else>❤️</i>
-</span>
+
+<div v-for="cat in cats" v-bind:key="index">
+            <div v-if="cat.name === 'Mr.Watson'">This is my cat! ️️️</div>
+            <div v-else>This is not my cat!</div>
+</div>
+
+<script>
+
+export default {
+  data() {
+    return {
+      cats: [{ name: "Mr.Watson" }, { name: "Mr.Furball" }]
+    };
+  },
+}
+</script>
 ```
 
-So to iterate, it restauran.laduzi is true, as in if it is defined, the poop emoji will show up.
-Otherwise we show the heart
+So to iterate, if cat.name is 'Mr.Watson', the operation cat.name === 'Mr.Watson' is true and we show the element inside the if statement.
+Otherwise we show that this is not our cat in the else tag.
 
 ### Lifecycle hooks
 
@@ -140,7 +166,7 @@ Last time we used the hook mounted. Basically it runs the code when everything i
 There are also other ones out there, and you can learn more
 about lifecycle hooks here
 
-https://vuejs.org/v2/guide/instance.html
+https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
 
 
 ```HTML
@@ -153,23 +179,6 @@ https://vuejs.org/v2/guide/instance.html
   </script>
 ```
 
-
-### Methods
-
-Methods are functions that you can run from the code itself or
-from user actions
-
-```HTML
- <script>
-    export default {
-      methods: {
-        doSomething() {
-          console.log('I am doing something')
-        }
-      },
-    }
-  </script>
-```
 
 ### Event listeners
 
@@ -186,18 +195,36 @@ https://vuejs.org/v2/guide/events.html
   </template>
 ```
 
+### Methods
+
+Methods are functions that you can run from the code itself or
+from user actions
+
+```HTML
+ <html>
+  <button @click="doSomething">Click me to do something!</button>
+ </html>
+ <script>
+    export default {
+      methods: {
+        doSomething() {
+          console.log('I am doing something!')
+        }
+      },
+    }
+  </script>
+```
+
 
 ## Today's Workshop
 
 We will be covering
 
 - Splitting components and importing them
-    - Restaurant card
-    - Page component
-    - Button component
+    - Restaurant card Component
+    - Home component page
+    - Restaurant component page
 - Properties
-- V-directives
-    - V-show
 - Routing
 
 You will get last time's sample code to work with including samples
@@ -228,8 +255,8 @@ to handle one specific task?
 
 - Restaurant card
 - Button
-- V-for
-- The entire page
+- List
+- Input
 
 Okay, the flip side of componentization is going too overboard with it.
 Literally anything on this page could be broken down into a separate file, but
@@ -242,8 +269,8 @@ what should be split, and what should not. This will get easier over time!
 
 For this workshop we will be splitting our old code into two components:
 
-- Restaurant card
-- Main
+- Restaurant card (RestaurantCard.vue)
+- Home (Home.vue)
 
 Another term often used in component design is parent-child relationship.
 In our case the main will contain the restaurant cards and contain data about restaurants and restaurant card will render the information about one restaurant inside a card. So since the card is inside the main, it is its child.
@@ -275,6 +302,7 @@ This is what the restaurant component export would look like
   }
 </script>
 ```
+
 Notice that it is good practice to define the type of data
 you are passing in and also a default value.
 
@@ -304,10 +332,14 @@ This is how to use it in the parent component
 notice that we the prop name and the inserted variable name does not
 need to be the same!
 
+### Properties - Tasks!
 
-### Splitting restaurant card
+- Take "this.restaurants" data from Home.vue and pass then as a property from App.vue!
 
-Last times code can be found here: https://codesandbox.io/s/vue-template-hut3w
+
+### Components - Splitting restaurant card
+
+Last times code can be found here: https://codesandbox.io/s/vue-template-czgeq
 As we can see in our old code we were using the directive v-for to loop over restaurants.
 Our task now is to take out the two span elements inside the outer v-for and 
 extract them into a separate component using what we learned previously. 
@@ -330,51 +362,211 @@ extract them into a separate component using what we learned previously.
 
 
 
-### New Vue-Directives
+### Component Tasks!
 
-Let's code up that restaurant card component and use two new directives in doing so:
-- V-show
-NOTE: If this works with the created components, let's go through it, otherwise not.
+- Create a restaurantCard.vue component
+- Import restaurantCard.vue into Home.vue
+- Render the new cards inside the v-for on Home.vue
 
 
+### Understanding the Vue project structure
 
+The main parts of a basic Vue project are these
+
+![](../.vuepress/assets/project-structure.png)
+
+**public** <br/>
+This is where you can put images, icons, sound files and so on. These are what we call static assets, as they are non-changing
+
+**src** <br/>
+All project code goes here
+
+**assets** <br/>
+You can also put images here. Assets operates a bit differently that public because you can for instance optimize image sizes and so on. As far as you are concerned for now you can put files either into public or assets <br/> For the curious one's you can look into Webpack, a article about the subject can be found here
+https://iamakulov.com/notes/optimize-images-webpack/
+
+**components** <br/>
+Here is where all our components live
+ 
+**pages** <br/>
+A component can also be a page, there is nothing
+different in code about components vs pages, it's only a way of categorization
+
+**router** <br/>
+We will cover this in the next section. But basically a router tells the app at which URL we should so a specific page. For instance it's common to have the login page behind "https://my-page.com/login"
+
+**App.vue** <br/>
+Contains all the pages and components of the app. The master container and component
+
+**main.js**
+This initializes the app and attaches the App.vue to the DOM (including anything required in App.vue)
+
+
+Here is a illustration of these parts. Notice how
+assets can exist on any level of a vue component!
+
+![](../.vuepress/assets/containers.png)
 
 ### Routing
 
-last thing we will cover today is routing. Routing means the action of
-redirecting the user to a new page. We have made a ready component, that shows 
-details about a restaurant in a new page. This can then be shared as is as the restaurant
-page.
+Last thing we will cover today is routing. Routing means the action of
+redirecting the user to a new page. In order for us to do that we need to tell both
+main.js and App.vue that we are going to do some routing. A router kind of sits between
+these two and tells which url (/login, /signup, /home) leads to which page.
 
-```HTML
-INSERT SAMPLE COMPONENT. 
-Basic requirements
- - Show details about the restaurant
- - Show laduzi vs no-laduzi counts
- - Show how many people have eaten there
- - Add a button to route back to main
+
+![](../.vuepress/assets/router.png)
+
+
+For this task we have created you already a component called RestaurantCard.vue. Go
+ahead and create a "RestaurantCard.vue" file in your components folder and paste in this code:
+
+```html
+ <template>
+    <section class="container-fluid">
+      <!-- Top Nav -->
+      <nav class="row justify-content-start mb-3 ml-1 nav">
+        <router-link :to="{ name: 'Home' }">
+          <span>
+            <img width="10%" src="../assets/restaurant.png">
+          </span>
+          <span>{{appName}}</span>
+        </router-link>
+      </nav>
+      <!-- Title -->
+      <header class="margin-bottom-10 center">
+        <h1>{{restaurant.name}}</h1>
+      </header>
+      <!-- Content -->
+      <main class="margin-bottom-10 center">
+        <p>{{restaurant.description}}</p>
+      </main>
+    </section>
+  </template>
+
+  <script>
+  export default {
+    name: "Restaurant",
+    props: {
+      appName: "",
+      restaurant: {
+        type: Object,
+        default: () => ({})
+      }
+    }
+  };
+  </script>
+
+  <style>
+  .nav {
+    text-align: left;
+  }
+  .center {
+    text-align: center;
+  }
+  </style>
+
 ```
 
-Really basic sample code in codesandbox
-https://codesandbox.io/s/vue-template-cj73u
+Okay now we have a new page, but we want to be able to route to it at "/restautant"
+Well in order for us to do so we need to define a router file and tell the app to do so
 
+Create a new folder called "router" and then
+create a file inside that folder called index.js. Then paste in this code
 
-In order to do routing we need a npm module called vuerouter. Vuerouter allows
-us to defined routes (pages) where our users can navigate to
-
-lets create a index.js file to host our application initialization
-
-``` js
+```js
 import Vue from "vue";
-import router from "./router";
-import App from "./App.vue"; // we will come back to this later
-import "bootstrap/dist/css/bootstrap.min.css"; // for styling
-Vue.config.productionTip = true;
-Vue.config.devtools = true;
+import Router from "vue-router";
+import Home from "../pages/Home.vue";
+import Restaurant from "../pages/Restaurant.vue";
 
-/* eslint-disable no-new */
-// we define the main entry point of the Vue instance.
-// we will discuss this later
+// Pass the router into your Vue instance
+Vue.use(Router);
+
+export default new Router({
+  mode: "history", // Allows use of the "back" button
+  // Define your app routes here
+  routes: [
+    {
+      // path in the url, sometimes the path can be complex so you can also use name for routing.
+      // you always do need to define the path as well!
+      path: "/", 
+      component: Home, // the component to show when we are visiting this route
+      name: "Home", // name of the component
+      props: true
+    },
+    {
+      path: "/restaurant",
+      component: Restaurant,
+      name: "Restaurant",
+      props: true
+    }
+  ]
+});
+
+```
+
+In the end your project structure should look like this <br/> <br/>
+![](../.vuepress/assets/project-structure.png)
+
+
+After this we will modify our App.vue to understand to use our new routes.
+You see here a new component called router-view, this is an external package
+that we have added to vue to extend its functionalities.
+
+In simple terms the router-view defines a window where we can show different pages (routes)
+
+App.vue
+```HTML
+<template>
+  <div id="app">
+    <!--
+      Instead of defining your component,
+      let Vue Router mount the component
+      depending on your route using the "router-view"
+      component. You can even pass in props directly
+      and they'll be available on every page.
+    -->
+    <router-view appName="LA DU ZI | 拉肚子 🍴"></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>
+
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 40px;
+}
+a {
+  color: #632b2b;
+}
+a:hover,
+a:focus {
+  color: #bed346;
+  text-decoration: none;
+}
+</style>
+
+```
+
+Lastly we will tell the main.js to use our new router
+
+
+```js
+import Vue from "vue"; // The official Vue instance
+import App from "./App.vue"; // Your Vue app entrypoint
+import router from "./router"; // Your custom router (at index.js)
+import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap Styles
+Vue.config.productionTip = false;
+
+// Mount the Vue instance as soon as the page loads
 new Vue({
   el: "#app",
   router,
@@ -383,68 +575,30 @@ new Vue({
 });
 ```
 
-next we will define the router. Here we have two components Hello and Home.
-
-```js
-import Vue from "vue";
-// vue-router npm package that extends vue
-import Router from "vue-router";
-// normal vue components
-import Home from "../components/Home.vue";
-import Hello from "../components/Hello.vue";
-Vue.use(Router);
-
-export default new Router({
-  mode: "history",
-
-  routes: [
-    {
-      path: "/", // path in the url https://something.com/
-      redirect: "/home" // redirect to another path, in this case /home
-    },
-
-    {
-      path: "/home", // path in the url https://something.com/home
-      component: Home // the component to show when we are visiting this route
-    },
-
-    {
-      path: "/hello", // path in the url https://something.com/hello
-      component: Hello
-    }
-  ]
-});
-```
-
-Lastly we will need to bring these pieces together. There needs to be one parent component
-that handles routing and showing the routes on the page. Let's call that App.vue. This is
-the same App component we imported earlier.
-
-Here you can see how we are using a vuerouter exposed custom element called router-link
-to define which component to render when we click on it.
-The result of the click will be rendered inside the router-view component.
+Ok this is great and all, but how will people actually find themselves to these pages?
+In comes router-link. As you can see we can define in the HTML of any component a 
+link and 
 
 ```HTML
-<template>
-  <div id="app">
-    <router-link class="link" :to="{ path: '/hello'}">Say hello</router-link>
-    <br>
-    <router-link class="link" :to="{ path: '/'}">Main</router-link>
-    <br>
-		<router-view></router-view>
-  </div>
-</template>
-
-<script>
-
-export default {
-  name: "app"
-};
-</script>
+  <router-link
+        class="link"
+        :to="{
+          path: '/restaurant', // if you have defined a name you can also use that for routing
+          name: 'Restaurant',
+          params: { restaurant: restaurant } // pass in properties
+        }"
+      >{{restaurant.name}}</router-link>
 ```
+
+### Routing - Tasks!
+
+- Add a router link to the RestaurantCard.vue to lead to the page of that restaurant
+- Pass in the restaurant property of the RestaurantCard to the restauran page
+- Create a new route! (you can also create a new page to route to)
+
 
 ### Completed code
 
 You can check out the completed code here!
 
-https://codesandbox.io/s/laduzi-app-e6dvm
+https://codesandbox.io/s/laduzi-app-m4dz0
