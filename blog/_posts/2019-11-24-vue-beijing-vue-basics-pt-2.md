@@ -36,7 +36,7 @@ Help us make Beijing a safer place to eat!
 - JS (Javascript), sometimes called Ecmascript (ESM)
   What things do
 
-- CSS (Cascading Style Sheets)
+- CSS (Cascading Style Sheets) - You might also see SASS or SCSS that are just extensions of CSS
 
 - Front-End
   What you see on a website

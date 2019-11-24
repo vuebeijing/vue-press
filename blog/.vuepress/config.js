@@ -2,7 +2,7 @@ module.exports = {
   title: 'Vue Beijing Workshops',
   description: 'This is a blog example built by VuePress',
   theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
-  plugins: ['@dovyp/vuepress-plugin-clipboard-copy', true],
+  plugins: ['@dovyp/vuepress-plugin-clipboard-copy'],
   themeConfig: {
     /**
      * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
