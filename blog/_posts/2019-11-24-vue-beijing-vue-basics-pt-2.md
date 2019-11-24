@@ -578,8 +578,9 @@ link and
 
 ### 🌮 Routing - Tasks!
 
-- Add a router link to the RestaurantCard.vue to lead to the page of that restaurant
-- Pass in the restaurant property of the RestaurantCard to the restauran page
+- Add a router link to the `RestaurantCard.vue` to lead to the page of that restaurant
+- Pass in the restaurant property of the `RestaurantCard` to the restaurant page
+- 
 - Create a new route! (you can also create a new page to route to)
 
 
