@@ -323,7 +323,7 @@ need to be the same!
 
 ### Components - Splitting restaurant card
 
-Last times code can be found here: https://codesandbox.io/s/vue-template-czgeq
+Last times code can be found here: https://codesandbox.io/s/vue-template-hy5ln
 As we can see in our old code we were using the directive v-for to loop over restaurants.
 Our task now is to take out the two span elements inside the outer v-for and 
 extract them into a separate component using what we learned previously. 
@@ -348,8 +348,8 @@ extract them into a separate component using what we learned previously.
 
 ### Component Tasks!
 
-- Create a restaurantCard.vue component
-- Import restaurantCard.vue into Home.vue
+- Create a RestaurantCard.vue component
+- Import RestaurantCard.vue into Home.vue
 - Render the new cards inside the v-for on Home.vue
 
 
@@ -402,8 +402,8 @@ these two and tells which url (/login, /signup, /home) leads to which page.
 ![](../.vuepress/assets/router.png)
 
 
-For this task we have created you already a component called RestaurantCard.vue. Go
-ahead and create a "RestaurantCard.vue" file in your components folder and paste in this code:
+For this task we have created you already a component called Restaurant.vue. It is a page that we 
+will route to. Go ahead and create a "Restaurant.vue" file in your components folder and paste in this code:
 
 ```html
  <template>
