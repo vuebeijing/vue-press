@@ -9,16 +9,16 @@ author: Tuomo
 location: Beijing 
 ---
 
-# Vue Basics - Part II
+<h1 align="center" >Vue Basics - Part II</h1>
 
 ## Our app, Laduzi
 
 The goal of Laduzi app is to rate restaurants based on a simple evaluation criteria:
 
-Did you or did you not get Laduzi.
+> Did you or did you not get Laduzi（拉肚子）?
 
 Laduzi in the restaurant industry is rampant and terrorizing and affecting millions
-of people Beijing wide - this needs to come to an end!
+of people Beijing wide. This needs to come to an end!
 
 Now using one app you can see the restaurants around you and see if people have
 suffered Laduzi after dining there. You can also report your own Laduzi experiences
@@ -30,40 +30,28 @@ Help us make Beijing a safer place to eat!
 
 ### Terminology
 
-- HTML (HyperText Markup Language) <br/>
-  Where things are
+- **HTML (HyperText Markup Language)**: Where things are and how they're structured
 
-- JS (Javascript), sometimes called Ecmascript (ESM) <br/>
-  What things do
+- **JS (Javascript)**: Sometimes called Ecmascript (ESM). It helps determine the behavious of your app.
 
-- CSS (Cascading Style Sheets) - You might also see SASS or SCSS that are just extensions of CSS <br/>
-  What things look like
+- **CSS (Cascading Style Sheets)**: You might also see SASS or SCSS that are just extensions of CSS. I determines what things look like in your app.
 
-- Front-End <br/>
-  Everything you see on a website
+- **Front-End:** Everything that you can see and on a website in the browser.
 
-- Vue <br/>
-  Vue is a front-end framework. It makes development easier
+- **Vue:** Vue is a front-end framework. It makes development easier
 
-- SFC (Single File Component) <br/>
-  Have HTML, CSS, JS in the same file
+- **SFC (Single File Component):** Have HTML, CSS, JS in the same file
 
-- DOM (Document Object Model) <br/>
-  Contains all elements in the page icluding HTML, JS, CSS and other cool stuff.
+- **DOM (Document Object Model):** Contains all elements in the page icluding HTML, JS, CSS and other cool stuff.
   Normally used like: "The button didn't render in the DOM"
   
-- Render <br/>
-  Show something in the DOM
+- **Render:** Show something in the DOM
 
-- V-directive <br/>
-  Tools to render (show) things in the DOM
+- **Directive:** Tools to render (show) things in the DOM
 
-- Tag <br/>
-  HTML elements we can use on the DOM, like div or input. A good list of the basic components <br/>
-  can be found here: https://www.learn-html.org/en/Basic_Elements
+- **Tag:** HTML elements we can use on the DOM, like div or input. A good list of the basic components can be found **[here.](https://www.learn-html.org/en/Basic_Elements)**
   
-- Object <br/>
-  Think about a cat. The cats name is Mr.Watson and it is red. When we formulate this as an object we get
+- **Object:** Think about a cat. The cats name is Mr.Watson and it is red. When we formulate this as an object we get:
   ```js
    const myCat = {
      name:'Mr.Watson',
@@ -71,8 +59,8 @@ Help us make Beijing a safer place to eat!
    }
   ```
 
-### Vue SFC
-
+### Vue Single File Component (SFC)
+This is a file that enables you to write the HTML, CSS and Javscript for your component in a single location.
 
 ```HTML
   <template>
@@ -90,9 +78,9 @@ Help us make Beijing a safer place to eat!
 
 ### Directives
 
-#### V-for
+#### `v-for`
 
-Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
+Render (show) a list from an array i.e. `['banana', 'orange', 'laduzi']`
 
 ```HTML
   <div v-for="item in items" v-bind:key="index">
@@ -109,7 +97,7 @@ Example for a list
   </ul>
 ```
 
-#### V-model and declarative rendering
+#### `v-model` and declarative rendering
 
 Bind changes in an input to a value and render (show) it in the DOM
 ```HTML
@@ -130,9 +118,9 @@ Bind changes in an input to a value and render (show) it in the DOM
     }
   </script>
 ```
-#### V-if-else
+#### `v-if-else`
 
-V-if-else is a simple if this then that, else do this command. 
+`v-if-else` is a simple if this then that, else do this command. 
 For instance we can render a list to see if or if not a cat is our belowed
 Mr.Watson
 
@@ -155,8 +143,7 @@ export default {
 </script>
 ```
 
-So to iterate, if cat.name is 'Mr.Watson', the operation cat.name === 'Mr.Watson' is true and we show the element inside the if statement.
-Otherwise we show that this is not our cat in the else tag.
+So to iterate, if `cat.name` is `'Mr.Watson'`, the operation `cat.name === 'Mr.Watson'` is true. Therefore, we show the element inside the if statement. Otherwise we show that this is not our cat in the `else` tag.
 
 ### Lifecycle hooks
 
@@ -164,9 +151,7 @@ Lifecycle hooks run at a certain point in a Vue components lifetime.
 Last time we used the hook mounted. Basically it runs the code when everything in showing in the DOM.
 
 There are also other ones out there, and you can learn more
-about lifecycle hooks here
-
-https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
+about lifecycle hooks **[here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)**
 
 
 ```HTML
@@ -182,9 +167,7 @@ https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
 
 ### Event listeners
 
-We used @click to react to a click event. There are others out there as well.
-Take a look
-https://vuejs.org/v2/guide/events.html
+We used `@click` to react to a click event. There are others out there as well. [Take a look!](https://vuejs.org/v2/guide/events.html)
 
 
 ```HTML
@@ -210,7 +193,7 @@ from user actions
         doSomething() {
           console.log('I am doing something!')
         }
-      },
+      }
     }
   </script>
 ```
@@ -220,19 +203,19 @@ from user actions
 
 We will be covering
 
-- Splitting components and importing them
+1. Splitting components and importing them
     - Restaurant card Component
     - Home component page
     - Restaurant component page
-- Properties
-- Routing
+2. Properties
+3. Routing
 
 You will get last time's sample code to work with including samples
 provided here. We will go one step at a time and give you time to
 work on each problem!
 
 
-### Splitting components
+## 1. Splitting components
 
 In javascript in general you can export and import files.
 It would be rather cumbersome to have everything in one file.
@@ -248,7 +231,8 @@ You can take out the monitor and change it to a new one. The monitor does monito
 
 Splitting things into smaller components makes the whole easier to manage!
 
-### Splitting our project
+<br />
+#### Splitting our project
 
 Looking at our project what could be parts that one could take apart 
 to handle one specific task?
@@ -280,7 +264,7 @@ in which case the main becomes the child of that and so forth.
 Doing multiple levels of parent-child nesting can also get complicated, so
 try to keep your component design as flat as possible.
 
-### Properties
+## 2. Properties
 
 Before we can start splitting our code, we need to talk a little about something called properties.
 Properties are variables that you can pass into a component. So for instance
@@ -375,30 +359,30 @@ The main parts of a basic Vue project are these
 
 ![](../.vuepress/assets/project-structure.png)
 
-**public** <br/>
+- **public** <br/>
 This is where you can put images, icons, sound files and so on. These are what we call static assets, as they are non-changing
 
-**src** <br/>
-All project code goes here
+- **src**
+    All project code goes here
 
-**assets** <br/>
+- **assets** <br/>
 You can also put images here. Assets operates a bit differently that public because you can for instance optimize image sizes and so on. As far as you are concerned for now you can put files either into public or assets <br/> For the curious one's you can look into Webpack, a article about the subject can be found here
 https://iamakulov.com/notes/optimize-images-webpack/
 
-**components** <br/>
+- **components**
 Here is where all our components live
  
-**pages** <br/>
+- **pages**
 A component can also be a page, there is nothing
 different in code about components vs pages, it's only a way of categorization
 
-**router** <br/>
+- **router**
 We will cover this in the next section. But basically a router tells the app at which URL we should so a specific page. For instance it's common to have the login page behind "https://my-page.com/login"
 
-**App.vue** <br/>
+- **App.vue**
 Contains all the pages and components of the app. The master container and component
 
-**main.js**
+- **main.js**
 This initializes the app and attaches the App.vue to the DOM (including anything required in App.vue)
 
 
@@ -407,7 +391,7 @@ assets can exist on any level of a vue component!
 
 ![](../.vuepress/assets/containers.png)
 
-### Routing
+## 2. Routing
 
 Last thing we will cover today is routing. Routing means the action of
 redirecting the user to a new page. In order for us to do that we need to tell both
@@ -430,16 +414,16 @@ ahead and create a "RestaurantCard.vue" file in your components folder and paste
           <span>
             <img width="10%" src="../assets/restaurant.png">
           </span>
-          <span>{{appName}}</span>
+          <span> {{appName}} </span>
         </router-link>
       </nav>
       <!-- Title -->
       <header class="margin-bottom-10 center">
-        <h1>{{restaurant.name}}</h1>
+        <h1> {{restaurant.name}} </h1>
       </header>
       <!-- Content -->
       <main class="margin-bottom-10 center">
-        <p>{{restaurant.description}}</p>
+        <p> {{restaurant.description}} </p>
       </main>
     </section>
   </template>
@@ -468,11 +452,11 @@ ahead and create a "RestaurantCard.vue" file in your components folder and paste
 
 ```
 
-Okay now we have a new page, but we want to be able to route to it at "/restautant"
+Okay now we have a new page, but we want to be able to route to it at `"/restautant"`
 Well in order for us to do so we need to define a router file and tell the app to do so
 
-Create a new folder called "router" and then
-create a file inside that folder called index.js. Then paste in this code
+Create a new folder called `"router"` and then
+create a file inside that folder called `index.js`. Then paste in this code
 
 ```js
 import Vue from "vue";
@@ -511,12 +495,12 @@ In the end your project structure should look like this <br/> <br/>
 
 
 After this we will modify our App.vue to understand to use our new routes.
-You see here a new component called router-view, this is an external package
+You see here a new component called `<router-view />`, this is an external package
 that we have added to vue to extend its functionalities.
 
 In simple terms the router-view defines a window where we can show different pages (routes)
 
-App.vue
+In `App.vue`
 ```HTML
 <template>
   <div id="app">
@@ -556,7 +540,7 @@ a:focus {
 
 ```
 
-Lastly we will tell the main.js to use our new router
+Lastly we will tell the `main.js` to use our new router
 
 
 ```js
@@ -576,10 +560,10 @@ new Vue({
 ```
 
 Ok this is great and all, but how will people actually find themselves to these pages?
-In comes router-link. As you can see we can define in the HTML of any component a 
+In comes `<router-link />`. As you can see we can define in the HTML of any component a 
 link and 
 
-```HTML
+```vue
   <router-link
         class="link"
         :to="{
@@ -587,10 +571,12 @@ link and
           name: 'Restaurant',
           params: { restaurant: restaurant } // pass in properties
         }"
-      >{{restaurant.name}}</router-link>
+      >
+        {{ restaurant.name }}
+      </router-link>
 ```
 
-### Routing - Tasks!
+### 🌮 Routing - Tasks!
 
 - Add a router link to the RestaurantCard.vue to lead to the page of that restaurant
 - Pass in the restaurant property of the RestaurantCard to the restauran page
