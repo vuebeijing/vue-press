@@ -15,10 +15,10 @@ location: Beijing
 
 The goal of Laduzi app is to rate restaurants based on a simple evaluation criteria:
 
-Did you or did you not get Laduzi.
+> Did you or did you not get Laduzi（拉肚子）?
 
 Laduzi in the restaurant industry is rampant and terrorizing and affecting millions
-of people Beijing wide - this needs to come to an end!
+of people Beijing wide. This needs to come to an end!
 
 Now using one app you can see the restaurants around you and see if people have
 suffered Laduzi after dining there. You can also report your own Laduzi experiences
@@ -32,40 +32,28 @@ Help us make Beijing a safer place to eat!
 
 ### Terminology
 
-- HTML (HyperText Markup Language) <br/>
-  Where things are
+- **HTML (HyperText Markup Language)**: Where things are and how they're structured
 
-- JS (Javascript), sometimes called Ecmascript (ESM) <br/>
-  What things do
+- **JS (Javascript)**: Sometimes called Ecmascript (ESM). It helps determine the behavious of your app.
 
-- CSS (Cascading Style Sheets) - You might also see SASS or SCSS that are just extensions of CSS <br/>
-  What things look like
+- **CSS (Cascading Style Sheets)**: You might also see SASS or SCSS that are just extensions of CSS. I determines what things look like in your app.
 
-- Front-End <br/>
-  Everything you see on a website
+- **Front-End:** Everything that you can see and on a website in the browser.
 
-- Vue <br/>
-  Vue is a front-end framework. It makes development easier
+- **Vue:** Vue is a front-end framework. It makes development easier
 
-- SFC (Single File Component) <br/>
-  Have HTML, CSS, JS in the same file
+- **SFC (Single File Component):** Have HTML, CSS, JS in the same file
 
-- DOM (Document Object Model) <br/>
-  Contains all elements in the page icluding HTML, JS, CSS and other cool stuff.
+- **DOM (Document Object Model):** Contains all elements in the page icluding HTML, JS, CSS and other cool stuff.
   Normally used like: "The button didn't render in the DOM"
   
-- Render <br/>
-  Show something in the DOM
+- **Render:** Show something in the DOM
 
-- V-directive <br/>
-  Tools to render (show) things in the DOM
+- **Directive:** Tools to render (show) things in the DOM
 
-- Tag <br/>
-  HTML elements we can use on the DOM, like div or input. A good list of the basic components <br/>
-  can be found here: https://www.learn-html.org/en/Basic_Elements
+- **Tag:** HTML elements we can use on the DOM, like div or input. A good list of the basic components can be found **[here.](https://www.learn-html.org/en/Basic_Elements)**
   
-- Object <br/>
-  Think about a cat. The cats name is Mr.Watson and it is red. When we formulate this as an object we get
+- **Object:** Think about a cat. The cats name is Mr.Watson and it is red. When we formulate this as an object we get:
   ```js
    const myCat = {
      name:'Mr.Watson',
@@ -73,8 +61,8 @@ Help us make Beijing a safer place to eat!
    }
   ```
 
-### Vue SFC
-
+### Vue Single File Component (SFC)
+This is a file that enables you to write the HTML, CSS and Javscript for your component in a single location.
 
 ```HTML
   <template>
@@ -92,9 +80,9 @@ Help us make Beijing a safer place to eat!
 
 ### Directives
 
-#### V-for
+### `v-for`
 
-Render (show) a list from an array i.e. ['banana', 'orange', 'laduzi']
+Render (show) a list from an array i.e. `['banana', 'orange', 'laduzi']`
 
 ```HTML
   <div v-for="item in items" v-bind:key="index">
@@ -111,7 +99,7 @@ Example for a list
   </ul>
 ```
 
-#### V-model and declarative rendering
+### `v-model` and declarative rendering
 
 Bind changes in an input to a value and render (show) it in the DOM
 ```HTML
@@ -132,9 +120,9 @@ Bind changes in an input to a value and render (show) it in the DOM
     }
   </script>
 ```
-#### V-if-else
+### `v-if-else`
 
-V-if-else is a simple if this then that, else do this command. 
+`v-if-else` is a simple if this then that, else do this command. 
 For instance we can render a list to see if or if not a cat is our belowed
 Mr.Watson
 
@@ -157,8 +145,7 @@ export default {
 </script>
 ```
 
-So to iterate, if cat.name is 'Mr.Watson', the operation cat.name === 'Mr.Watson' is true and we show the element inside the if statement.
-Otherwise we show that this is not our cat in the else tag.
+So to iterate, if `cat.name` is `'Mr.Watson'`, the operation `cat.name === 'Mr.Watson'` is true. Therefore, we show the element inside the if statement. Otherwise we show that this is not our cat in the `else` tag.
 
 ### Lifecycle hooks
 
@@ -166,9 +153,7 @@ Lifecycle hooks run at a certain point in a Vue components lifetime.
 Last time we used the hook mounted. Basically it runs the code when everything in showing in the DOM.
 
 There are also other ones out there, and you can learn more
-about lifecycle hooks here
-
-https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
+about lifecycle hooks **[here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)**
 
 
 ```HTML
@@ -184,9 +169,7 @@ https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
 
 ### Event listeners
 
-We used @click to react to a click event. There are others out there as well.
-Take a look
-https://vuejs.org/v2/guide/events.html
+We used `@click` to react to a click event. There are others out there as well. [Take a look!](https://vuejs.org/v2/guide/events.html)
 
 
 ```HTML
@@ -212,7 +195,7 @@ from user actions
         doSomething() {
           console.log('I am doing something!')
         }
-      },
+      }
     }
   </script>
 ```
@@ -277,7 +260,7 @@ assets can exist on any level of a vue component!
 
 ![](../.vuepress/assets/containers.png)
 
-### Splitting components
+## 1. Splitting components
 
 In javascript in general you can export and import files.
 It would be rather cumbersome to have everything in one file.
@@ -293,6 +276,7 @@ You can take out the monitor and change it to a new one. The monitor does monito
 
 Splitting things into smaller components makes the whole easier to manage!
 
+<br />
 ### Splitting our project
 
 Looking at our project what could be parts that one could take apart 
@@ -327,7 +311,7 @@ Here App.vue is a parent of Home.vue which is a parent of RestaurantCard.vue
 Doing multiple levels of parent-child nesting can also get complicated, so
 try to keep your component design as flat as possible.
 
-### Properties
+## 2. Properties
 
 Before we can start splitting our code, we need to talk a little about something called properties.
 Properties are variables that you can pass into a component. So for instance
