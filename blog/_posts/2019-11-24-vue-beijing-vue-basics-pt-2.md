@@ -1,5 +1,5 @@
 ---
-date: 2019-11-24
+date: 2019/11/24
 tag: 
   - vue beijing
   - vue
