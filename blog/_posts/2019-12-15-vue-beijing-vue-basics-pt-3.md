@@ -9,7 +9,7 @@ location: Beijing
 ---
 
 
-# Add routing your Vue application - Part III
+# Routing with Vue.js - Part III
 ![](../.vuepress/assets/workshops/3/routing.jpeg)
 
 ## 🦥 What is routing?
@@ -250,7 +250,7 @@ Made with {...💚} by Vue Beijing!
   <p>
     Translate your events now with Akkadu. No apps. No downloads. By scanning a QR Code, your audience can listen to the live interpretation!
   </p>
-  <h4>PS: We're hiring. <a>See jobs at Akkadu</a></h4>
+  <h4>PS: We're hiring. <a target="_blank" href="https://akkadu.cn/careers">See jobs at Akkadu</a></h4>
 </center>
 
 
