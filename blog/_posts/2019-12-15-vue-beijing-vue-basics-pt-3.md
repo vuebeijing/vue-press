@@ -155,12 +155,6 @@ export default {
 </script>
 ```
 
-With any luck, we should be able to see the nav links in your browser as shown in the image below! :)
-
-<center>
-  <img align="center" src="../.vuepress/assets/workshops/3/navbar.png" width="400" />
-</center>
-
 ### Registering the router
 Now we're ready to add our router to our application!
 
@@ -176,6 +170,12 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 ```
+
+With any luck, we should be able to see the nav links we created in the navbar in your browser as shown in the image below! :)
+
+<center>
+  <img align="center" src="../.vuepress/assets/workshops/3/navbar.png" width="400" />
+</center>
 
 ### The `RouterView` component
 Bravo! Now we're ready to display our routes in our app. Vue also (as always), makes this super easy and fun too! Out of the box, Vue gives us the `RouterView` component to display the pages that we registered in our router. Adding this to our app is a sincle step.
