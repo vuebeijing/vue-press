@@ -10,9 +10,6 @@ module.exports = {
     modifyBlogPluginOptions(blogPluginOptions) {
       return blogPluginOptions
     },
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#nav
-     */
     nav: [
       {
         text: 'Posts',
@@ -23,18 +20,15 @@ module.exports = {
         link: '/tag/',
       },
     ],
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#footer
-     */
     footer: {
       contact: [
         {
           type: 'github',
-          link: 'https://github.com/ulivz',
+          link: 'https://github.com/vuebeijing',
         },
         {
           type: 'twitter',
-          link: 'https://twitter.com/_ulivz',
+          link: 'https://twitter.com/beijing_vue',
         },
       ],
       copyright: [
@@ -43,10 +37,10 @@ module.exports = {
           link: 'https://policies.google.com/privacy?hl=en-US',
         },
         {
-          text: 'MIT Licensed | Copyright © 2018-present Vue.js',
+          text: 'MIT Licensed | Copyright © 2019-present Vue.js',
           link: '',
         },
       ],
     },
-  },
+  }
 }
