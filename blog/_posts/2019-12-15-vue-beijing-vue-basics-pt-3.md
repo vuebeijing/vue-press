@@ -240,15 +240,19 @@ Made with {...💚} by Vue Beijing!
 
 ### 🏄🏽‍♂️Sponsors
 <center>
-  <img
-    align="center"
-    src="https://res.cloudinary.com/akkadu/image/upload/v1573184036/Brand%20Assets/akkadu-logo-h_m6kzki.png" width="400"
-  />
+  <a target="_blank" href="https://akkadu.cn/">
+    <img
+      align="center"
+      src="https://res.cloudinary.com/akkadu/image/upload/v1573184036/Brand%20Assets/akkadu-logo-h_m6kzki.png" width="400"
+    />
+  </a>
   <h3>Remote Simultaneous Interpretation.</h3>
   <p>
     Translate your events now with Akkadu. No apps. No downloads. By scanning a QR Code, your audience can listen to the live interpretation!
   </p>
+  <h4>PS: We're hiring. <a>See jobs at Akkadu</a></h4>
 </center>
+
 
 ### 📝 Contacts
 We're active on social media. Feel free to contact us about anything! Feedback, sponsorship, partnerships or even make some requests for future meetups and workshops. We're also looking for volunteers to help us with our workshops and meetups. Contact us for more info
